@@ -1,6 +1,7 @@
 # Huỳnh Lê Minh Thịnh
 # ITITIU15014
 
+
 def problem1():
     string = ""
     for x in range(2000, 3200):
@@ -29,58 +30,36 @@ def problem3():
 
 def problem4():
     while True:
-        value = input("Enter the number: ")
-        values = list(value.split(","))
-        tuples = tuple(value.split(","))
-        print(values)
-        print(tuples)
+        values = input("Enter the number: ")
+        print(list(values.split(",")))
+        print(tuple(values.split(",")))
 
 
 def problem5():
-    class IOString():
-        def __init__(self):
-            self.str1 = ""
-
-        def get_String(self):
-            self.str1 = input()
-
-        def print_String(self):
-            print(self.str1.upper())
-
-    print("Enter the string: ")
-    str1 = IOString()
-    str1.get_String()
-    str1.print_String()
+    print(input("Enter the string: ").upper())
 
 
 def problem6():
     import math
     while True:
-        results = list()
-        value = input("Enter the number: ")
-        values = list(value.split(","))
-        for x in values[:]:
-            results.append(round(math.sqrt((2 * 50 * int(x) / 30))))
+        numbers = input("Enter the number: ").split(",")
+        results = list(map(lambda x: round(math.sqrt((2 * 50 * int(x) / 30))), numbers))
         print(','.join([str(i) for i in results]))
-        # results.clear()
 
 
 def problem7():
     while True:
-        value = input("Enter the number X,Y respectively: ")
-        values = list(value.split(","))
-        X = int(values.__getitem__(0))
-        Y = int(values.__getitem__(1))
-        matrix = [[X * Y for Y in range(0, Y)] for X in range(0, X)]
+        values = input("Enter the number X,Y respectively: ").split(",")
+        X = int(values[0])
+        Y = int(values[1])
+        matrix = [[X * Y for Y in range(Y)] for X in range(X)]
         print(matrix)
 
 
 def problem8():
     while True:
-        value = input("Enter the words: ")
-        values = list(value.split(","))
-        values.sort()
-        print(','.join([str(i) for i in values]))
+        values = input("Enter the words: ").split(",")
+        print(','.join(sorted(values)))
 
 
 def problem9():
@@ -99,42 +78,30 @@ def problem9():
 
 
 def problem10():
-    def remove_duplicates(values):
-        output = list()
-        seen = set()
-        for value in values:
-            if value not in seen:
-                output.append(value)
-                seen.add(value)
-        return output
-
     while True:
-        string = ""
-        value = input("Enter the words: ")
-        values = list(value.split(" "))
-        values = remove_duplicates(values)
-        values.sort()
-        for value in values:
-            string += value + " "
-        print(string)
+        string = input("Enter the words: ")
+        print(" ".join(sorted(set(string.split()))))
+
 
 # problem1()
 # problem2()
-# 8
+"""8"""
 # problem3()
-# 8
+"""8"""
 # problem4()
-# 34,67,55,33,12,98
+"""34,67,55,33,12,98"""
 # problem5()
-# This is the String
+"""This is the String"""
 # problem6()
-# 100,150,180
+"""100,150,180"""
 # problem7()
-# 3,5
+"""3,5"""
 # problem8()
-# without,hello,bag,world
+"""without,hello,bag,world"""
 # problem9()
-# Hello world
-# Practice makes perfect
+"""
+Hello world
+Practice makes perfect
+"""
 # problem10()
-# hello world and practice makes perfect and hello world again
+"""hello world and practice makes perfect and hello world again"""
